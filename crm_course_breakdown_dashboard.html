@@ -1,0 +1,393 @@
+
+<h2 class="sr-only">CRM application summary: 3046 total, 2282 valid, 1863 active — broken down by course category UG, PG, Ext. Mgmt, Top-Up, PDP</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:0 0 1.5rem;font-family:var(--font-sans)}
+.topbar{background:#1F3864;color:#fff;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
+.topbar h1{font-size:15px;font-weight:500;margin-bottom:2px}
+.topbar p{font-size:11px;opacity:.65}
+.krow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1rem}
+.kcard{border-radius:8px;padding:.8rem 1rem;text-align:center}
+.kcard .lbl{font-size:10px;font-weight:500;margin-bottom:4px;opacity:.85}
+.kcard .val{font-size:22px;font-weight:500}
+.kcard .sub{font-size:10px;margin-top:2px;opacity:.7}
+.section{border:0.5px solid var(--color-border-tertiary);border-radius:12px;overflow:hidden;margin-bottom:1rem}
+.sec-hdr{padding:.65rem 1rem;font-size:12px;font-weight:500;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em}
+.big-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.big-table th{padding:7px 10px;font-weight:500;font-size:11px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary);white-space:nowrap;background:var(--color-background-secondary)}
+.big-table th.r,.big-table td.r{text-align:right}
+.big-table td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:middle}
+.big-table tr:last-child td{border-bottom:none}
+.big-table .gtrow td{font-weight:500;background:#1F3864;color:#fff}
+.cat-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.pct-bar{display:flex;align-items:center;gap:6px}
+.pb{height:7px;border-radius:4px;background:var(--color-background-secondary);flex:1;overflow:hidden;min-width:60px}
+.pb-fill{height:100%;border-radius:4px}
+.pv{font-size:11px;color:var(--color-text-secondary);min-width:28px;text-align:right}
+.chart-area{padding:1rem 1.25rem}
+.chart-wrap{position:relative;width:100%;height:260px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:.75rem;font-size:12px;color:var(--color-text-secondary)}
+.leg-item{display:flex;align-items:center;gap:5px}
+.leg-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:500}
+.bp{background:#FEF3CD;color:#6B4300}
+.bc{background:#D6EFD8;color:#1A4D2E}
+.bh{background:#FCE4D6;color:#7B2D00}
+.bw{background:#EDE7F6;color:#4A1E8C}
+.br{background:#FFE0E0;color:#7A0000}
+.mini-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:1rem 1.25rem}
+.mini{background:var(--color-background-secondary);border-radius:8px;padding:.7rem .9rem}
+.mini .ml{font-size:10px;color:var(--color-text-secondary);margin-bottom:2px}
+.mini .mv{font-size:18px;font-weight:500;color:var(--color-text-primary)}
+.mini .msub{font-size:10px;color:var(--color-text-secondary);margin-top:1px}
+</style>
+
+<div class="wrap">
+
+<div class="topbar">
+  <h1><i class="ti ti-chart-bar" aria-hidden="true"></i> CRM Application Summary — Course-wise Breakdown</h1>
+  <p>Report Date: 23 June 2026 &nbsp;·&nbsp; Prepared by: Ashish</p>
+</div>
+
+<div class="krow">
+  <div class="kcard" style="background:#1F3864;color:#fff">
+    <div class="lbl">Total Applications</div>
+    <div class="val">3,046</div>
+    <div class="sub">100% of pipeline</div>
+  </div>
+  <div class="kcard" style="background:#2E4DA7;color:#fff">
+    <div class="lbl">Valid Applications</div>
+    <div class="val">2,282</div>
+    <div class="sub">excl. withdrawn · rejected</div>
+  </div>
+  <div class="kcard" style="background:#375623;color:#fff">
+    <div class="lbl">Active Applications</div>
+    <div class="val">1,863</div>
+    <div class="sub">excl. on hold</div>
+  </div>
+  <div class="kcard" style="background:#7030A0;color:#fff">
+    <div class="lbl">Withdrawn</div>
+    <div class="val">742</div>
+    <div class="sub">24.4% of total</div>
+  </div>
+  <div class="kcard" style="background:#C00000;color:#fff">
+    <div class="lbl">Rejected</div>
+    <div class="val">21</div>
+    <div class="sub">0.7% of total</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-hdr"><i class="ti ti-table" aria-hidden="true"></i> &nbsp;Course-wise full breakdown</div>
+  <table class="big-table">
+    <thead>
+      <tr>
+        <th>Course Category</th>
+        <th class="r">Total</th>
+        <th class="r">Valid</th>
+        <th class="r">Active</th>
+        <th class="r">On Hold</th>
+        <th class="r">Withdrawn</th>
+        <th class="r">Rejected</th>
+        <th class="r">Docs Pending</th>
+        <th class="r">Docs Completed</th>
+        <th>Active %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="cat-dot" style="background:#2E4DA7"></span><strong>UG</strong></td>
+        <td class="r">1,632</td>
+        <td class="r">1,095</td>
+        <td class="r">846</td>
+        <td class="r">249</td>
+        <td class="r"><span class="badge bw">507</span></td>
+        <td class="r"><span class="badge br">8</span></td>
+        <td class="r"><span class="badge bp">372</span></td>
+        <td class="r"><span class="badge bc">474</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:51.8%;background:#2E4DA7"></div></div>
+            <span class="pv">51.8%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cat-dot" style="background:#375623"></span><strong>PG</strong></td>
+        <td class="r">771</td>
+        <td class="r">564</td>
+        <td class="r">450</td>
+        <td class="r">114</td>
+        <td class="r"><span class="badge bw">170</span></td>
+        <td class="r"><span class="badge br">10</span></td>
+        <td class="r"><span class="badge bp">284</span></td>
+        <td class="r"><span class="badge bc">166</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:58.4%;background:#375623"></div></div>
+            <span class="pv">58.4%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cat-dot" style="background:#7B2D9E"></span><strong>Ext. Mgmt</strong></td>
+        <td class="r">345</td>
+        <td class="r">267</td>
+        <td class="r">215</td>
+        <td class="r">52</td>
+        <td class="r"><span class="badge bw">67</span></td>
+        <td class="r"><span class="badge br">3</span></td>
+        <td class="r"><span class="badge bp">134</span></td>
+        <td class="r"><span class="badge bc">81</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:62.3%;background:#7B2D9E"></div></div>
+            <span class="pv">62.3%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cat-dot" style="background:#C55A11"></span><strong>Top-Up</strong></td>
+        <td class="r">289</td>
+        <td class="r">283</td>
+        <td class="r">280</td>
+        <td class="r">3</td>
+        <td class="r"><span class="badge bw">3</span></td>
+        <td class="r"><span class="badge br">0</span></td>
+        <td class="r"><span class="badge bp">235</span></td>
+        <td class="r"><span class="badge bc">45</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:96.9%;background:#C55A11"></div></div>
+            <span class="pv">96.9%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cat-dot" style="background:#888"></span><strong>PDP</strong></td>
+        <td class="r">4</td>
+        <td class="r">4</td>
+        <td class="r">4</td>
+        <td class="r">0</td>
+        <td class="r"><span class="badge bw">0</span></td>
+        <td class="r"><span class="badge br">0</span></td>
+        <td class="r"><span class="badge bp">4</span></td>
+        <td class="r"><span class="badge bc">0</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:100%;background:#888"></div></div>
+            <span class="pv">100%</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cat-dot" style="background:#444"></span><strong>Ext. Top-Up</strong></td>
+        <td class="r">5</td>
+        <td class="r">5</td>
+        <td class="r">5</td>
+        <td class="r">0</td>
+        <td class="r"><span class="badge bw">0</span></td>
+        <td class="r"><span class="badge br">0</span></td>
+        <td class="r"><span class="badge bp">4</span></td>
+        <td class="r"><span class="badge bc">1</span></td>
+        <td>
+          <div class="pct-bar">
+            <div class="pb"><div class="pb-fill" style="width:100%;background:#444"></div></div>
+            <span class="pv">100%</span>
+          </div>
+        </td>
+      </tr>
+      <tr class="gtrow">
+        <td>GRAND TOTAL</td>
+        <td class="r">3,046</td>
+        <td class="r">2,218</td>
+        <td class="r">1,800</td>
+        <td class="r">418</td>
+        <td class="r">747</td>
+        <td class="r">21</td>
+        <td class="r">1,033</td>
+        <td class="r">767</td>
+        <td style="color:#9fc8ff;font-size:11px">59.1% active</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="sec-hdr"><i class="ti ti-chart-bar-popular" aria-hidden="true"></i> &nbsp;Course-wise stacked bar chart</div>
+  <div class="chart-area">
+    <div class="legend">
+      <span class="leg-item"><span class="leg-sq" style="background:#375623"></span>Docs Completed</span>
+      <span class="leg-item"><span class="leg-sq" style="background:#FFC000"></span>Docs Pending</span>
+      <span class="leg-item"><span class="leg-sq" style="background:#E36C09"></span>On Hold</span>
+      <span class="leg-item"><span class="leg-sq" style="background:#7030A0"></span>Withdrawn</span>
+      <span class="leg-item"><span class="leg-sq" style="background:#C00000"></span>Rejected</span>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="stackedBar" role="img" aria-label="Stacked bar: UG 1632, PG 771, Ext.Mgmt 345, Top-Up 289, PDP 4, Ext.Top-Up 5">Application counts by category and status.</canvas>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-hdr"><i class="ti ti-percentage" aria-hidden="true"></i> &nbsp;Rejection rate by course</div>
+  <div style="padding:.85rem 1.25rem">
+    <table class="big-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th class="r">Total</th>
+          <th class="r">Rejected</th>
+          <th class="r">Withdrawal Rate</th>
+          <th class="r">Rejection Rate</th>
+          <th class="r">On Hold Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cat-dot" style="background:#2E4DA7"></span>UG</td>
+          <td class="r">1,632</td>
+          <td class="r"><span class="badge br">8</span></td>
+          <td class="r">31.1%</td>
+          <td class="r">0.49%</td>
+          <td class="r">15.2%</td>
+        </tr>
+        <tr>
+          <td><span class="cat-dot" style="background:#375623"></span>PG</td>
+          <td class="r">771</td>
+          <td class="r"><span class="badge br">10</span></td>
+          <td class="r">22.1%</td>
+          <td class="r">1.30%</td>
+          <td class="r">14.8%</td>
+        </tr>
+        <tr>
+          <td><span class="cat-dot" style="background:#7B2D9E"></span>Ext. Mgmt</td>
+          <td class="r">345</td>
+          <td class="r"><span class="badge br">3</span></td>
+          <td class="r">19.4%</td>
+          <td class="r">0.87%</td>
+          <td class="r">15.1%</td>
+        </tr>
+        <tr>
+          <td><span class="cat-dot" style="background:#C55A11"></span>Top-Up</td>
+          <td class="r">289</td>
+          <td class="r"><span class="badge bc">0</span></td>
+          <td class="r">1.0%</td>
+          <td class="r">0.00%</td>
+          <td class="r">1.0%</td>
+        </tr>
+        <tr>
+          <td><span class="cat-dot" style="background:#888"></span>PDP</td>
+          <td class="r">4</td>
+          <td class="r"><span class="badge bc">0</span></td>
+          <td class="r">0.0%</td>
+          <td class="r">0.00%</td>
+          <td class="r">0.0%</td>
+        </tr>
+        <tr>
+          <td><span class="cat-dot" style="background:#444"></span>Ext. Top-Up</td>
+          <td class="r">5</td>
+          <td class="r"><span class="badge bc">0</span></td>
+          <td class="r">0.0%</td>
+          <td class="r">0.00%</td>
+          <td class="r">0.0%</td>
+        </tr>
+        <tr class="gtrow">
+          <td>Grand Total</td>
+          <td class="r">3,046</td>
+          <td class="r">21</td>
+          <td class="r">24.5%</td>
+          <td class="r">0.69%</td>
+          <td class="r">13.7%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-hdr"><i class="ti ti-chart-donut" aria-hidden="true"></i> &nbsp;Distribution overview</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+    <div style="padding:1rem 1.25rem;border-right:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:.5rem;font-weight:500">TOTAL BY CATEGORY</div>
+      <div style="position:relative;width:100%;height:200px">
+        <canvas id="catPie" role="img" aria-label="Pie: UG 53.6%, PG 25.3%, Ext.Mgmt 11.3%, Top-Up 9.5%, PDP+Ext.Top-Up 0.3%">Category split of 3046 total applications.</canvas>
+      </div>
+    </div>
+    <div style="padding:1rem 1.25rem">
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:.5rem;font-weight:500">STATUS MIX (ALL APPS)</div>
+      <div style="position:relative;width:100%;height:200px">
+        <canvas id="statusPie" role="img" aria-label="Pie: Active 61%, Withdrawn 24.4%, On Hold 13.7%, Rejected 0.7%">Status breakdown of 3046 total applications.</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const txt = isDark ? '#ccc' : '#555';
+const grid = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+const bw = isDark ? '#111' : '#fff';
+
+new Chart(document.getElementById('stackedBar'), {
+  type: 'bar',
+  data: {
+    labels: ['UG', 'PG', 'Ext. Mgmt', 'Top-Up', 'PDP', 'Ext. Top-Up'],
+    datasets: [
+      { label: 'Docs Completed', data: [474,166,81,45,0,1], backgroundColor: '#375623', borderRadius: 0 },
+      { label: 'Docs Pending',   data: [372,284,134,235,4,4], backgroundColor: '#FFC000', borderRadius: 0 },
+      { label: 'On Hold',        data: [249,114,52,3,0,0], backgroundColor: '#E36C09', borderRadius: 0 },
+      { label: 'Withdrawn',      data: [507,170,67,3,0,0], backgroundColor: '#7030A0', borderRadius: 0 },
+      { label: 'Rejected',       data: [8,10,3,0,0,0], backgroundColor: '#C00000', borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { stacked: true, ticks: { color: txt, font: { size: 12 } }, grid: { color: grid } },
+      y: { stacked: true, ticks: { color: txt, font: { size: 11 } }, grid: { color: grid }, beginAtZero: true }
+    }
+  }
+});
+
+new Chart(document.getElementById('catPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['UG (53.6%)', 'PG (25.3%)', 'Ext. Mgmt (11.3%)', 'Top-Up (9.5%)', 'PDP+Ext.Top-Up (0.3%)'],
+    datasets: [{
+      data: [1632, 771, 345, 289, 9],
+      backgroundColor: ['#2E4DA7','#375623','#7B2D9E','#C55A11','#888'],
+      borderWidth: 2, borderColor: bw
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { font: { size: 10 }, color: txt, boxWidth: 10, padding: 8 } }
+    }
+  }
+});
+
+new Chart(document.getElementById('statusPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Active (61.1%)', 'Withdrawn (24.5%)', 'On Hold (13.7%)', 'Rejected (0.7%)'],
+    datasets: [{
+      data: [1863, 747, 418, 21],
+      backgroundColor: ['#375623','#7030A0','#E36C09','#C00000'],
+      borderWidth: 2, borderColor: bw
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { font: { size: 10 }, color: txt, boxWidth: 10, padding: 8 } }
+    }
+  }
+});
+</script>
